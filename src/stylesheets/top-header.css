@@ -1,0 +1,13 @@
+header.top-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--crt-font-color);
+    color: var(--crt-background-color);
+    font-family: "VT323", monospace;
+    font-size: 2rem;
+    padding: 0.25rem 1rem;
+    filter: drop-shadow(0 0.125rem 0.25rem var(--crt-font-color));
+    /* text-shadow: var(--crt-active-font-color) 1px 1px 0.2rem; */
+    text-shadow: var(--crt-background-color) 0 0 0.125rem;
+    /* filter: blur(0.5px) drop-shadow(0 0.125rem 0.25rem var(--crt-font-color)); */
+}

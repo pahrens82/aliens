@@ -1,0 +1,22 @@
+button {
+    background-color: var(--crt-background-color);
+    font-size: 2rem;
+    border: thin solid var(--crt-font-color);
+    text-align: left;
+    color: var(--crt-font-color);
+    box-shadow: 0 0 0.125rem 0.125rem var(--crt-font-color);
+    text-shadow: var(--crt-font-color) 1px 1px 2px;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    &.active {
+        color: var(--crt-active-font-color);
+        border-width: 1px 0.75rem;
+        border-color: var(--crt-active-font-color);
+        box-shadow: 0 0 0.125rem 0.125rem var(--crt-active-font-color);
+        text-shadow: var(--crt-active-font-color) 1px 1px 2px;
+    }
+}

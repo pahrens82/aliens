@@ -1,0 +1,178 @@
+:root {
+    color-scheme: light dark;
+    font-synthesis: none;
+    font-family: "VT323", monospace;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --crt-font-color: #66FF66;
+    /* --crt-active-font-color: #fff3ae; */
+    --crt-active-font-color: #ffe552;
+    --crt-background-color: #242424;
+}
+
+:root[data-theme="light"] {
+    background-color: #EEE;
+}
+
+:root[data-theme="dark"] {
+    background-color: var(--crt-background-color);
+}
+
+button {
+    font-family: "VT323", monospace;
+}
+
+h1,
+.h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+}
+
+h2,
+.h2 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+h3,
+.h3 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-crt {
+    background-color: var(--crt-background-color);
+}
+
+.bg-phosphor {
+    background-color: var(--crt-font-color);
+}
+
+.text-phosphor {
+    color: var(--crt-font-color);
+    text-shadow: var(--crt-font-color) 1px 1px 0.2rem;
+}
+
+.text-phosphor-active {
+    color: var(--crt-active-font-color);
+    text-shadow: var(--crt-active-font-color) 1px 1px 0.2rem;
+}
+
+.text-crt {
+    color: var(--crt-background-color);
+}
+
+.border-phosphor {
+    border: thin solid var(--crt-font-color);
+    box-shadow: 0 0 0.125rem 0.125rem var(--crt-font-color);
+}
+
+.border-phosphor-active {
+    border: thin solid var(--crt-active-font-color);
+    box-shadow: 0 0 0.125rem 0.125rem var(--crt-active-font-color);
+}
+
+section.active-section {
+    display: grid;
+}
+
+section.inactive-section {
+    display: none;
+}
+
+#home {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* @keyframes flicker95 {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.96;
+    }
+
+    100% {
+        opacity: 1;
+    }
+} */
+
+/* Emulate CRT flicker */
+.flicker-95 {
+    animation: flicker95 250ms infinite alternate;
+}
+
+/* @keyframes flicker90 {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.90;
+    }
+
+    100% {
+        opacity: 1;
+    }
+} */
+
+.flicker-90 {
+    animation: flicker90 250ms infinite alternate;
+}
+
+/* Emulate CRT curvature */
+.curve {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+}
+
+/* Emulate scanlines */
+.scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.2) 50%,
+            transparent 50%);
+    background-size: 100% 4px;
+    /* Adjust 4px to control line thickness and spacing */
+    pointer-events: none;
+    /* Allows interaction with content beneath the overlay */
+    z-index: 1;
+    /* Ensure it's on top of the content */
+}
+
+.glow {
+    text-shadow: var(--crt-font-color) 1px 1px 2px;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer {
+    font-size: larger;
+    color: var(--crt-font-color);
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    text-shadow: var(--crt-font-color) 1px 1px 2px;
+}
